@@ -50,8 +50,10 @@ const url = "https://api.dictionaryapi.dev/api/v2/entries/en/";
 const result = document.getElementById("result");
 const sound = document.getElementById("sound");
 const btn = document.getElementById("search-btn");
+const form = document.querySelector("form")
 
-btn.addEventListener("click", () => {
+form.addEventListener("submit", (e) => {
+    e.preventDefault()
     let inpWord = document.getElementById("inp-word").value;
     fetch(`${url}${inpWord}`)
         .then((response) => {
